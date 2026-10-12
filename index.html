@@ -3,47 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>لعب Laeb — الدعم</title>
+<title>لعب — احجز ملعبك في عُمان</title>
+<meta name="description" content="لعب: احجز ملعب كرة القدم أو البادل في عُمان، وأدر ملعبك وحجوزاتك من مكان واحد.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230d382e'/%3E%3Ccircle cx='20' cy='20' r='12' fill='none' stroke='%23c9f36d' stroke-width='2.4'/%3E%3Ccircle cx='20' cy='20' r='7' fill='none' stroke='%23c9f36d' stroke-width='2.4'/%3E%3Cpath d='M20 6v28' stroke='%23c9f36d' stroke-width='2.4'/%3E%3C/svg%3E">
 <style>
-:root{--bg:#f4f5f1;--ink:#173c2f;--muted:#738076;--lime:#dcf59a;--card:#fff;--line:#e3e7de}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Arabic","Geeza Pro",Tahoma,sans-serif;line-height:1.8}
-main{max-width:720px;margin:auto;padding:40px 20px 60px}
-h1{font-size:40px;margin:0}h2{font-size:20px;margin:32px 0 8px}p,li{color:var(--muted)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
-a{color:var(--ink);font-weight:700}.btn{display:inline-block;background:var(--lime);padding:12px 20px;border-radius:10px;text-decoration:none}
-.en{direction:ltr;text-align:left}footer{margin-top:40px;font-size:13px;color:var(--muted)}
+:root{--bg:#f4f5f1;--ink:#173c2f;--deep:#0d382e;--muted:#6d7b72;--lime:#dcf59a;--lime2:#c9f36d;--card:#fff;--line:#e3e7de}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"SF Arabic","Geeza Pro",Tahoma,sans-serif;line-height:1.7}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:#f4f5f1e6;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-size:28px;font-weight:900;letter-spacing:-1px}
+nav{display:flex;gap:22px;font-size:14px}nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{padding:64px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:2.5px;color:var(--muted);font-weight:600}
+h1{font-size:56px;line-height:1.15;margin:12px 0 16px;letter-spacing:-1px}
+.lead{font-size:18px;color:var(--muted);max-width:520px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;font-size:15px}
+.btn.dark{background:var(--ink);color:#fff}.btn.lime{background:var(--lime);color:var(--ink)}
+.btn small{display:block;font-weight:500;font-size:11px;opacity:.8;line-height:1}
+.phone{justify-self:center;width:300px;height:610px;border-radius:46px;background:#0b0c0d;padding:12px;box-shadow:0 40px 80px #0d382e33;position:relative}
+.screen{width:100%;height:100%;border-radius:36px;background:var(--bg);overflow:hidden;position:relative}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;border-radius:20px;background:#0b0c0d;z-index:2}
+.s-head{background:#fff;padding:44px 16px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.s-head b{font-size:22px;font-weight:900;display:flex;align-items:center;gap:6px}.s-login{font-size:10px;border:1px solid var(--line);border-radius:8px;padding:5px 9px}
+.s-body{padding:14px 16px}
+.s-body h3{margin:2px 0 2px;font-size:20px}.s-body p{margin:0 0 10px;font-size:10px;color:var(--muted)}
+.s-search{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px;font-size:10px;color:#9aa49d;margin-bottom:10px}
+.chips{display:flex;gap:6px;margin-bottom:12px}.chip{font-size:10px;padding:5px 11px;border-radius:14px;border:1px solid var(--line);background:#fff}.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.feat{border-radius:14px;height:150px;background:radial-gradient(circle at 25% 15%,#fffbe0 0 3px,transparent 4px),radial-gradient(circle at 75% 10%,#fffbe0 0 3px,transparent 4px),linear-gradient(170deg,#0f1f1a 0%,#16342a 45%,#2f7a36 46%,#3b8f3f 100%);color:#fff;padding:14px;position:relative;overflow:hidden}
+.feat:after{content:"";position:absolute;left:-20px;right:-20px;bottom:30px;height:2px;background:#ffffffaa;transform:rotate(-14deg)}
+.feat span{font-size:9px;border:1px solid #fff9;border-radius:10px;padding:2px 7px}.feat h4{margin:8px 0 6px;font-size:16px;line-height:1.3}.feat i{font-style:normal;font-size:9px;background:var(--lime);color:var(--ink);padding:4px 9px;border-radius:7px;font-weight:700}
+.card{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .img{height:70px;background:linear-gradient(160deg,#7fb3e6 0 35%,#2747c9 36% 100%);position:relative}
+.card .img:after{content:"";position:absolute;inset:18px 30px 8px;border:2px solid #ffffffb0;border-top:0}
+.card .t{padding:9px 12px;display:flex;justify-content:space-between;align-items:center}.card .t b{font-size:13px}.card .t em{font-style:normal;font-weight:900}
+.tabbar{position:absolute;bottom:0;left:0;right:0;height:56px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;font-size:9px;color:#8d9987}.tabbar .on{color:var(--ink);font-weight:700}
+section{padding:56px 0}
+h2{font-size:34px;margin:0 0 8px;letter-spacing:-.5px}.sub{color:var(--muted);margin:0 0 28px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.box .n{width:38px;height:38px;border-radius:12px;background:var(--lime);display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+.box h3{margin:0 0 6px;font-size:18px}.box p{margin:0;color:var(--muted);font-size:15px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{border-radius:24px;padding:32px}.panel.light{background:#fff;border:1px solid var(--line)}.panel.dark{background:var(--deep);color:#fff}
+.panel ul{padding:0;margin:16px 0 0;list-style:none}.panel li{padding:8px 0;border-bottom:1px solid #00000010;display:flex;gap:10px}.panel.dark li{border-color:#ffffff1a}
+.panel li:before{content:"✓";color:#3d6b2a;font-weight:900}.panel.dark li:before{color:var(--lime2)}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:18px}.price b{font-size:44px;color:var(--lime2)}.price span{opacity:.8}
+.badge{display:inline-block;background:var(--lime);color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+.logo-big{display:flex;justify-content:center;margin-bottom:14px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:36px}h1{font-size:40px}.grid3,.split{grid-template-columns:1fr}nav{display:none}}
 </style>
 </head>
 <body>
-<main>
-  <h1>لعب</h1>
-  <p>احجز ملعب كرة القدم أو البادل في عُمان، وأدر ملعبك وحجوزاتك من مكان واحد.</p>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="لعب">
+      <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#173c2f" stroke-width="2.6"/><circle cx="20" cy="20" r="10" fill="none" stroke="#173c2f" stroke-width="2.6"/><path d="M20 2v36" stroke="#173c2f" stroke-width="2.6"/></svg>
+      <b>لعب</b>
+    </a>
+    <nav><a href="#how">كيف يشتغل</a><a href="#owners">لأصحاب الملاعب</a><a href="support.html">الدعم</a><a href="privacy.html">الخصوصية</a></nav>
+  </div>
+</header>
 
-  <div class="card">
-    <h2>الدعم والتواصل</h2>
-    <p>عندك سؤال أو مشكلة في الحجز أو الحساب؟ راسلنا وبنرد عليك في أقرب وقت.</p>
-    <p><a class="btn" href="mailto:oalkharbushi@gmail.com">oalkharbushi@gmail.com</a></p>
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">FIND YOUR NEXT GAME · OMAN</div>
+      <h1>وين نلعب اليوم؟<br>احجز ملعبك في دقيقة.</h1>
+      <p class="lead">لعب يجمع ملاعب كرة القدم والبادل في عُمان في تطبيق واحد. شوف المواعيد المتاحة، أرسل طلبك، وتابع تأكيد صاحب الملعب.</p>
+      <div class="cta">
+        <a class="btn dark" href="#download"><svg width="18" height="22" viewBox="0 0 17 20" fill="#fff" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9C3.7 4.8 2.1 5.8 1.2 7.3c-1.8 3.2-.5 7.9 1.3 10.4.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.2-1.2 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.3zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>قريبًا على</small>App Store</span></a>
+        <a class="btn lime" href="#owners">عندك ملعب؟ انضم</a>
+      </div>
+    </div>
+    <div class="phone" aria-label="معاينة التطبيق">
+      <div class="screen">
+        <div class="island"></div>
+        <div class="s-head"><span class="s-login">تسجيل الدخول</span><b><svg width="18" height="18" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="#173c2f" stroke-width="3"/><circle cx="20" cy="20" r="10" fill="none" stroke="#173c2f" stroke-width="3"/><path d="M20 2v36" stroke="#173c2f" stroke-width="3"/></svg>لعب</b></div>
+        <div class="s-body">
+          <h3>وين نلعب اليوم؟</h3>
+          <p>كرة أو بادل. اختر ملعبك، وخلك جاهز.</p>
+          <div class="s-search">ابحث عن ملعب أو منطقة…</div>
+          <div class="chips"><span class="chip on">الكل</span><span class="chip">كرة القدم</span><span class="chip">البادل</span></div>
+          <div class="feat"><span>اللّيلة للّعب</span><h4>جمّع الربع.<br>الملعب ينتظرك.</h4><i>اكتشف ملاعب الكرة</i></div>
+          <div class="card"><div class="img"></div><div class="t"><b>بادل وادي</b><em>18 ر.ع</em></div></div>
+        </div>
+        <div class="tabbar"><span class="on">اكتشف</span><span>المفضلة</span><span>حجوزاتي</span><span>حسابي</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>أسئلة شائعة</h2>
-    <ul>
-      <li><b>كيف أحجز؟</b> اختر الملعب واليوم والوقت، وأرسل الطلب. يظهر الحجز «مؤكد» في حجوزاتك بعد ما يؤكده صاحب الملعب.</li>
-      <li><b>كيف أدفع؟</b> الدفع يكون عند الملعب مباشرة. ما فيه دفع إلكتروني داخل التطبيق.</li>
-      <li><b>كيف ألغي الحجز؟</b> من «حجوزاتي» اضغط «إلغاء الحجز» قبل بدء الموعد.</li>
-      <li><b>كيف أحذف حسابي؟</b> من «حسابي» اضغط «حذف الحساب نهائيًا». يُحذف الحساب وكل بياناته.</li>
-      <li><b>أنا صاحب ملعب، كيف أنضم؟</b> سجّل حساب «صاحب ملعب» من التطبيق، أو راسلنا على الإيميل أعلاه.</li>
-    </ul>
-  </div>
+  <section id="how">
+    <h2>ثلاث خطوات وتلعب</h2>
+    <p class="sub">بدون اتصالات ولا انتظار رد على الواتساب.</p>
+    <div class="grid3">
+      <div class="box"><div class="n">١</div><h3>اختر الملعب</h3><p>فلتر حسب الرياضة والمحافظة، وشوف الصور والمرافق وسعر الساعة.</p></div>
+      <div class="box"><div class="n">٢</div><h3>حدد الموعد</h3><p>اختر اليوم والوقت المتاح من جدول الملعب، وأرسل طلب الحجز.</p></div>
+      <div class="box"><div class="n">٣</div><h3>انتظر التأكيد</h3><p>يأكد صاحب الملعب طلبك، ويظهر «مؤكد» في حجوزاتك. الدفع عند الملعب.</p></div>
+    </div>
+  </section>
 
-  <div class="card en">
-    <h2>Laeb — Support</h2>
-    <p>Book football and padel courts in Oman, and manage your court and bookings in one place.</p>
-    <p>Questions about a booking or your account? Email us at <a href="mailto:oalkharbushi@gmail.com">oalkharbushi@gmail.com</a>.</p>
-    <p>Payment happens at the court. You can cancel a booking from “My bookings” before it starts, and delete your account from “Account → Delete account”.</p>
-  </div>
+  <section id="owners">
+    <div class="split">
+      <div class="panel light">
+        <span class="badge">للاعبين</span>
+        <h2 style="margin-top:14px">كل الملاعب في جيبك</h2>
+        <ul>
+          <li>ملاعب كرة قدم وبادل في محافظات عُمان</li>
+          <li>مواعيد متاحة يحدّثها صاحب الملعب نفسه</li>
+          <li>احفظ ملاعبك المفضلة وارجع لها بسرعة</li>
+          <li>الدفع عند الملعب، بدون بطاقات</li>
+        </ul>
+      </div>
+      <div class="panel dark">
+        <span class="badge">لأصحاب الملاعب</span>
+        <h2 style="margin-top:14px">ملعبك يستحق يكون هنا</h2>
+        <ul>
+          <li>اعرض ملعبك بالصور والمرافق والسعر</li>
+          <li>استقبل طلبات الحجز وأكّدها بضغطة</li>
+          <li>سجّل حجوزات الاتصال والواتساب عشان ما يتكرر الموعد</li>
+          <li>لوحة واحدة لكل ملاعبك وحجوزاتك</li>
+        </ul>
+        <div class="price"><b>15</b><span>ر.ع شهريًا لكل حساب · أول ٣٠ يوم مجانًا</span></div>
+        <p style="margin:18px 0 0"><a class="btn lime" href="mailto:oalkharbushi@gmail.com?subject=%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%85%D9%84%D8%B9%D8%A8%20%D8%A5%D9%84%D9%89%20%D9%84%D8%B9%D8%A8">تواصل معنا للانضمام</a></p>
+      </div>
+    </div>
+  </section>
 
-  <footer><a href="privacy.html">سياسة الخصوصية · Privacy Policy</a></footer>
+  <section id="download" style="text-align:center">
+    <div class="logo-big"><svg width="84" height="84" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0d382e"/><circle cx="20" cy="20" r="12" fill="none" stroke="#c9f36d" stroke-width="2.4"/><circle cx="20" cy="20" r="7" fill="none" stroke="#c9f36d" stroke-width="2.4"/><path d="M20 6v28" stroke="#c9f36d" stroke-width="2.4"/></svg></div>
+    <h2>قريبًا على App Store</h2>
+    <p class="sub">التطبيق قيد المراجعة من أبل. بنعلن أول ما ينزل.</p>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 لعب · Laeb — مسقط، عُمان</span>
+    <span><a href="support.html">الدعم</a> · <a href="privacy.html">سياسة الخصوصية</a> · <a href="mailto:oalkharbushi@gmail.com">oalkharbushi@gmail.com</a></span>
+  </div>
+</footer>
 </body>
 </html>
